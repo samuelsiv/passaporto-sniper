@@ -1,4 +1,7 @@
 {
+  "name": "passaporto-sniper",
+  "version": "1.0.0",
+  "author": "Samuel Siviero <me@samu3l.wtf>",
   "scripts": {
     "start": "tsc && node dist/index.js"
   },
