@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start": "tsc && node dist/index.js"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/winston": "^2.4.4",
+    "axios": "^1.7.6",
+    "dotenv": "^16.4.5",
+    "winston": "^3.14.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.1"
+  }
+}
