@@ -1,6 +1,8 @@
+import dotenv from 'dotenv'; 
+dotenv.config();
+
 import { getComune, getAvailabilities } from "./client";
 import { logger } from "./logger";
-import { Comune } from "./types";
 
 async function main() {
     logger.info("Inizializzo lo scanner...");
@@ -35,6 +37,8 @@ async function main() {
                logger.info(`Data: ${disponibileEntry.data}`)
                logger.info(`Posti disponibili: ${disponibileEntry.posti}`)
             });
+        } else {
+            logger.info("Nessuna disponibilità trovata. Riprovo tra 10 secondi!")
         }
         
         await new Promise(resolve => setTimeout(resolve, 10000));

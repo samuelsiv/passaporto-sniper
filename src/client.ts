@@ -26,7 +26,7 @@ export async function getAvailabilities(comune: Comune): Promise<PlaceEntry[]> {
         minorenne: false,
         minorenneDodici: false,
         pageInfo: {
-            maxResults: 5
+            maxResults: 20
         },
         sortInfo: {
             sortList: [
