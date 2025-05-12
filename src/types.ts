@@ -1,4 +1,4 @@
-type Comune = {
+export type Comune = {
     objectKey: string
     persistenceStatus: string
     id: string
@@ -79,13 +79,3 @@ export interface ElencaSediResponse extends BaseResponse {
 export interface GetComuneResponse extends BaseResponse {
     elenco: Comune[]
 }
-
-declare global {
-    namespace NodeJS {
-      interface ProcessEnv {
-        COOKIE: string;
-        COMUNE: string;
-        CSRF_TOKEN: string;
-      }
-    }
-  }

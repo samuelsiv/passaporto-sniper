@@ -1,12 +1,15 @@
 import { Comune, ElencaSediRequest, ElencaSediResponse, GetComuneResponse, PlaceEntry } from './types';
 import axios, { AxiosResponse } from 'axios';
 
+const COOKIE = `JSESSIONID=""`;
+const CSRF_TOKEN = "";
+
 const client = axios.create({
     baseURL: 'https://passaportonline.poliziadistato.it/cittadino',
     headers: {
         Accept: 'application/json, text/plain, */*',
-        Cookie: process.env.COOKIE,
-        'X-CSRF-TOKEN': process.env.CSRF_TOKEN,
+        Cookie: COOKIE,
+        'X-CSRF-TOKEN': CSRF_TOKEN,
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
       }
 });

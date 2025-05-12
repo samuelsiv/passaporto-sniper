@@ -1,8 +1,7 @@
-import dotenv from 'dotenv'; 
-dotenv.config();
-
 import { getComune, getAvailabilities } from "./client";
 import { logger } from "./logger";
+
+const COMUNE = "";
 
 async function main() {
     logger.info("Inizializzo lo scanner...");
@@ -10,9 +9,9 @@ async function main() {
     while (true) {
         let disponibilita: { comune: string; data: string; posti: number; }[] = [];
 
-        const comune = await getComune(process.env.COMUNE);
+        const comune = await getComune(COMUNE);
         if (!comune) {
-            logger.info(`Comune ${process.env.COMUNE} non trovato!`)
+            logger.info(`Comune ${COMUNE} non trovato!`)
             return;
         }
 
@@ -28,6 +27,8 @@ async function main() {
         });
 
         if (disponibilita.length > 0) {
+            require("child_process").exec("powershell.exe [console]::beep(5000,5000)");
+
             disponibilita.forEach(disponibileEntry => {
                 /*
                 TODO: Integrazione con notifiche (Telegram/WA/SMS)
